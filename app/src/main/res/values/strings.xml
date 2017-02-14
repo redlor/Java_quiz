@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Java Quiz</string>
+    <string name="title">Then 10 facts you have to know about Java</string>
+    <string name="question_n1_title">Question 1:</string>
+    <string name="question_n2_title">Question 2:</string>
+    <string name="question_n3_title">Question 3:</string>
+    <string name="question_n4_title">Question 4:</string>
+    <string name="question_n5_title">Question 5:</string>
+    <string name="question_n6_title">Question 6:</string>
+    <string name="question_n7_title">Question 7:</string>
+    <string name="question_n8_title">Question 8:</string>
+    <string name="question_n9_title">Question 9:</string>
+    <string name="question_n10_title">Question 10:</string>
+    <string name="question_n1">What was the original name of Java Language?</string>
+    <string name="question_n2">Who was the designer of Java?</string>
+    <string name="question_n3">In which year Java has been officially announced?</string>
+    <string name="question_n4">What company originally developed the language?</string>
+    <string name="question_n5">The syntax of Java is influenced by another programming language, which one?</string>
+    <string name="question_n6">What are some of the Java principles (select all that apply)?</string>
+    <string name="question_n7">Which style will you use to comment a single line of code?</string>
+    <string name="question_n8">What is the name of the small Java application that can be executed on a web browser?</string>
+    <string name="question_n9">Which keyword denotes that a method can be called from code in other classes?</string>
+    <string name="question_n10">What are the three notions of the Java Virtual Machine (JVM)?</string>
+    <string name="question_n1_radio_button_1">Maple</string>
+    <string name="question_n1_radio_button_2">Oak</string>
+    <string name="question_n1_radio_button_3">Birch</string>
+    <string name="question_n2_radio_button_1">Bill Gates</string>
+    <string name="question_n2_radio_button_2">James Gosling</string>
+    <string name="question_n2_radio_button_3">Steve Jobs</string>
+    <string name="question_n4_radio_button_1">Oracle</string>
+    <string name="question_n4_radio_button_2">Netscape</string>
+    <string name="question_n4_radio_button_3">Sun Microsystems</string>
+    <string name="question_n5_radio_button_1">Pascal</string>
+    <string name="question_n5_radio_button_2">Visual Basic</string>
+    <string name="question_n5_radio_button_3">C++</string>
+    <string name="question_n6_checkbox_1">Simple, object-oriented, and familiar</string>
+    <string name="question_n6_checkbox_2">Reliable and low cost </string>
+    <string name="question_n6_checkbox_3">Architecture-neutral and portable</string>
+    <string name="question_n6_checkbox_4">Robust and secure</string>
+    <string name="question_n6_checkbox_5">Rigid and static</string>
+    <string name="question_n7_radio_button_1">//</string>
+    <string name="question_n7_radio_button_2">/*</string>
+    <string name="question_n7_radio_button_3">**/</string>
+    <string name="question_n8_radio_button_1">Java power functions</string>
+    <string name="question_n8_radio_button_2">Java Servlet</string>
+    <string name="question_n8_radio_button_3">Java Applet</string>
+    <string name="question_n10_checkbox_1">Version</string>
+    <string name="question_n10_checkbox_2">Implementation </string>
+    <string name="question_n10_checkbox_3">Instance</string>
+    <string name="question_n10_checkbox_4">Process</string>
+    <string name="question_n10_checkbox_5">Specification</string>
+    <string name="submit_button">Submit</string>
+    <string name="reset_quiz">Try again</string>
+
+
+</resources>
