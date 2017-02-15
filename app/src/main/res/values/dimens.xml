@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="side_margin">24dp</dimen>
     <dimen name="text_size_question">20sp</dimen>
+    <dimen name="text_size_answers">18sp</dimen>
     <dimen name="java_logo">100dp</dimen>
 
 </resources>

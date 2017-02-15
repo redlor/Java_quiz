@@ -52,5 +52,11 @@
     <string name="submit_button">Submit</string>
     <string name="reset_quiz">Try again</string>
 
+    <string name="correct_answers_title">The correct answers:</string>
+    <string name="answer3">1995</string>
+    <string name="answer9">public</string>
+    <string name="you_got">You got</string>
+    <string name="out_of">out of</string>
+
 
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:scaleType="fitCenter"
+            android:src="@drawable/javalogo"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            style="@style/question"
+            android:id="@+id/wrong_answers_textview"
+            android:textSize="@dimen/text_size_answers" />
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/go_to_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_quiz" />
+    </LinearLayout>
+</ScrollView>
