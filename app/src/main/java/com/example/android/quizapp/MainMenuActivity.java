@@ -65,7 +65,7 @@ private EditText editPlayer;
     public void afterTextChanged(Editable s) {
 
 
-        if (s == editPlayer.getText()) {
+        if (s == editPlaye.getText()) {
             String tx1 = s.toString();
             Intent quizIntent = new Intent(MainMenuActivity.this, MainActivity.class);
             quizIntent.putExtra("name", tx1);
