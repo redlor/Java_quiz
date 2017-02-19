@@ -10,26 +10,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
-    public class SplashActivity extends AppCompatActivity {
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_card_view);
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
 
     double score = 0;
     boolean allDone;
+
 
     private RadioButton radioQ1Op1, radioQ1Op2, radioQ1Op3, radioQ2Op1, radioQ2Op2, radioQ2Op3, radioQ4Op1, radioQ4Op2, radioQ4Op3;
     private RadioButton radioQ5Op1, radioQ5Op2, radioQ5Op3, radioQ7Op1, radioQ7Op2, radioQ7Op3, radioQ8Op1, radioQ8Op2, radioQ8Op3;
@@ -72,37 +63,37 @@ public class MainActivity extends AppCompatActivity {
     private boolean booleanQ10Op4 = false;
     private boolean booleanQ10Op5 = false;
 
-    static final String score_saved = "score";
-    static final String q1Op1_saved = "Q1Op1";
-    static final String q1Op2_saved = "Q1Op2";
-    static final String q1Op3_saved = "Q1Op3";
-    static final String q2Op1_saved = "Q2Op1";
-    static final String q2Op2_saved = "Q2Op2";
-    static final String q2Op3_saved = "Q2Op3";
-    static final String q4Op1_saved = "Q4Op1";
-    static final String q4Op2_saved = "Q4Op2";
-    static final String q4Op3_saved = "Q4Op3";
-    static final String q5Op1_saved = "Q5Op1";
-    static final String q5Op2_saved = "Q5Op2";
-    static final String q5Op3_saved = "Q5Op3";
-    static final String q7Op1_saved = "Q7Op1";
-    static final String q7Op2_saved = "Q7Op2";
-    static final String q7Op3_saved = "Q7Op3";
-    static final String q8Op1_saved = "Q8Op1";
-    static final String q8Op2_saved = "Q8Op2";
-    static final String q8Op3_saved = "Q8Op3";
-    static final String q3Text_saved = "Q3Text";
-    static final String q9Text_saved = "Q9Text";
-    static final String Q6chk1_saved = "Q6Chk1";
-    static final String Q6chk2_saved = "Q6Chk2";
-    static final String Q6chk3_saved = "Q6Chk3";
-    static final String Q6chk4_saved = "Q6Chk4";
-    static final String Q6chk5_saved = "Q6Chk5";
-    static final String Q10chk1_saved = "Q10chk1";
-    static final String Q10chk2_saved = "Q10chk2";
-    static final String Q10chk3_saved = "Q10chk3";
-    static final String Q10chk4_saved = "Q10chk4";
-    static final String Q10chk5_saved = "Q10chk5";
+    static final String SCORE_SAVED = "score";
+    static final String Q1OP1_SAVED = "Q1Op1";
+    static final String Q1OP2_SAVED = "Q1Op2";
+    static final String Q1OP3_SAVED = "Q1Op3";
+    static final String Q2OP1_SAVED = "Q2Op1";
+    static final String Q2OP2_SAVED = "Q2Op2";
+    static final String Q2OP3_SAVED= "Q2Op3";
+    static final String Q4OP1_SAVED = "Q4Op1";
+    static final String Q4OP2_SAVED = "Q4Op2";
+    static final String Q4OP3_SAVED = "Q4Op3";
+    static final String Q5OP1_SAVED = "Q5Op1";
+    static final String Q5OP2_SAVED = "Q5Op2";
+    static final String Q5OP3_SAVED = "Q5Op3";
+    static final String Q7OP1_SAVED = "Q7Op1";
+    static final String Q7OP2_SAVED = "Q7Op2";
+    static final String Q7OP3_SAVED = "Q7Op3";
+    static final String Q8OP1_SAVED = "Q8Op1";
+    static final String Q8OP2_SAVED = "Q8Op2";
+    static final String Q8OP3_SAVED = "Q8Op3";
+    static final String Q3TEXT_SAVED = "Q3Text";
+    static final String Q9TEXT_SAVED = "Q9Text";
+    static final String Q6CHK1_SAVED = "Q6Chk1";
+    static final String Q6CHK2_SAVED = "Q6Chk2";
+    static final String Q6CHK3_SAVED = "Q6Chk3";
+    static final String Q6CHK4_SAVED = "Q6Chk4";
+    static final String Q6CHK5_SAVED = "Q6Chk5";
+    static final String Q10CHK1_SAVED = "Q10chk1";
+    static final String Q10CHK2_SAVED = "Q10chk2";
+    static final String Q10CHK3_SAVED = "Q10chk3";
+    static final String Q10CHK4_SAVED = "Q10chk4";
+    static final String Q10CHK5_SAVED = "Q10chk5";
 
 
     @Override
@@ -142,84 +133,86 @@ public class MainActivity extends AppCompatActivity {
         chkQ10Op4.setChecked(booleanQ10Op4);
         chkQ10Op5.setChecked(booleanQ10Op5);
 
+
+
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {               // save variable to temporary variable
         super.onSaveInstanceState(outState);
-        outState.putDouble(score_saved, score);
+        outState.putDouble(SCORE_SAVED, score);
 
-        outState.putBoolean(q1Op1_saved, radioQ1Op1.isChecked());
-        outState.putBoolean(q1Op2_saved, radioQ1Op2.isChecked());
-        outState.putBoolean(q1Op3_saved, radioQ1Op3.isChecked());
-        outState.putBoolean(q2Op1_saved, radioQ2Op1.isChecked());
-        outState.putBoolean(q2Op2_saved, radioQ2Op2.isChecked());
-        outState.putBoolean(q2Op3_saved, radioQ2Op3.isChecked());
-        outState.putBoolean(q4Op1_saved, radioQ4Op1.isChecked());
-        outState.putBoolean(q4Op2_saved, radioQ4Op2.isChecked());
-        outState.putBoolean(q4Op3_saved, radioQ4Op3.isChecked());
-        outState.putBoolean(q5Op1_saved, radioQ5Op1.isChecked());
-        outState.putBoolean(q5Op2_saved, radioQ5Op2.isChecked());
-        outState.putBoolean(q5Op3_saved, radioQ5Op3.isChecked());
-        outState.putBoolean(q7Op1_saved, radioQ7Op1.isChecked());
-        outState.putBoolean(q7Op2_saved, radioQ7Op2.isChecked());
-        outState.putBoolean(q7Op3_saved, radioQ7Op3.isChecked());
-        outState.putBoolean(q8Op1_saved, radioQ8Op1.isChecked());
-        outState.putBoolean(q8Op2_saved, radioQ8Op2.isChecked());
-        outState.putBoolean(q8Op3_saved, radioQ8Op3.isChecked());
+        outState.putBoolean(Q1OP1_SAVED, radioQ1Op1.isChecked());
+        outState.putBoolean(Q1OP2_SAVED, radioQ1Op2.isChecked());
+        outState.putBoolean(Q1OP3_SAVED, radioQ1Op3.isChecked());
+        outState.putBoolean(Q2OP1_SAVED, radioQ2Op1.isChecked());
+        outState.putBoolean(Q2OP2_SAVED, radioQ2Op2.isChecked());
+        outState.putBoolean(Q2OP3_SAVED, radioQ2Op3.isChecked());
+        outState.putBoolean(Q4OP1_SAVED, radioQ4Op1.isChecked());
+        outState.putBoolean(Q4OP2_SAVED, radioQ4Op2.isChecked());
+        outState.putBoolean(Q4OP3_SAVED, radioQ4Op3.isChecked());
+        outState.putBoolean(Q5OP1_SAVED, radioQ5Op1.isChecked());
+        outState.putBoolean(Q5OP2_SAVED, radioQ5Op2.isChecked());
+        outState.putBoolean(Q5OP3_SAVED, radioQ5Op3.isChecked());
+        outState.putBoolean(Q7OP1_SAVED, radioQ7Op1.isChecked());
+        outState.putBoolean(Q7OP2_SAVED, radioQ7Op2.isChecked());
+        outState.putBoolean(Q7OP3_SAVED, radioQ7Op3.isChecked());
+        outState.putBoolean(Q8OP1_SAVED, radioQ8Op1.isChecked());
+        outState.putBoolean(Q8OP2_SAVED, radioQ8Op2.isChecked());
+        outState.putBoolean(Q8OP3_SAVED, radioQ8Op3.isChecked());
 
-        outState.putString(q3Text_saved, textQ3.getText().toString());
-        outState.putString(q9Text_saved, textQ9.getText().toString());
+        outState.putString(Q3TEXT_SAVED, textQ3.getText().toString());
+        outState.putString(Q9TEXT_SAVED, textQ9.getText().toString());
 
-        outState.putBoolean(Q6chk1_saved, chkQ6Op1.isChecked());
-        outState.putBoolean(Q6chk2_saved, chkQ6Op2.isChecked());
-        outState.putBoolean(Q6chk3_saved, chkQ6Op3.isChecked());
-        outState.putBoolean(Q6chk4_saved, chkQ6Op4.isChecked());
-        outState.putBoolean(Q6chk5_saved, chkQ6Op5.isChecked());
-        outState.putBoolean(Q10chk1_saved, chkQ6Op1.isChecked());
-        outState.putBoolean(Q10chk2_saved, chkQ10Op2.isChecked());
-        outState.putBoolean(Q10chk3_saved, chkQ10Op3.isChecked());
-        outState.putBoolean(Q10chk4_saved, chkQ10Op4.isChecked());
-        outState.putBoolean(Q10chk5_saved, chkQ10Op5.isChecked());
+        outState.putBoolean(Q6CHK1_SAVED, chkQ6Op1.isChecked());
+        outState.putBoolean(Q6CHK2_SAVED, chkQ6Op2.isChecked());
+        outState.putBoolean(Q6CHK3_SAVED, chkQ6Op3.isChecked());
+        outState.putBoolean(Q6CHK4_SAVED, chkQ6Op4.isChecked());
+        outState.putBoolean(Q6CHK5_SAVED, chkQ6Op5.isChecked());
+        outState.putBoolean(Q10CHK1_SAVED, chkQ6Op1.isChecked());
+        outState.putBoolean(Q10CHK2_SAVED, chkQ10Op2.isChecked());
+        outState.putBoolean(Q10CHK3_SAVED, chkQ10Op3.isChecked());
+        outState.putBoolean(Q10CHK4_SAVED, chkQ10Op4.isChecked());
+        outState.putBoolean(Q10CHK5_SAVED, chkQ10Op5.isChecked());
 
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        score = savedInstanceState.getDouble(score_saved);
+        score = savedInstanceState.getDouble(SCORE_SAVED);
 
-        booleanQ1Op1 = savedInstanceState.getBoolean(q1Op1_saved);
-        booleanQ1Op2 = savedInstanceState.getBoolean(q1Op2_saved);
-        booleanQ1Op3 = savedInstanceState.getBoolean(q1Op3_saved);
-        booleanQ2Op1 = savedInstanceState.getBoolean(q2Op1_saved);
-        booleanQ2Op2 = savedInstanceState.getBoolean(q2Op2_saved);
-        booleanQ2Op3 = savedInstanceState.getBoolean(q2Op3_saved);
-        booleanQ4Op1 = savedInstanceState.getBoolean(q4Op1_saved);
-        booleanQ4Op2 = savedInstanceState.getBoolean(q4Op2_saved);
-        booleanQ4Op3 = savedInstanceState.getBoolean(q4Op3_saved);
-        booleanQ5Op1 = savedInstanceState.getBoolean(q5Op1_saved);
-        booleanQ5Op2 = savedInstanceState.getBoolean(q5Op2_saved);
-        booleanQ5Op3 = savedInstanceState.getBoolean(q5Op3_saved);
-        booleanQ7Op1 = savedInstanceState.getBoolean(q7Op1_saved);
-        booleanQ7Op2 = savedInstanceState.getBoolean(q7Op2_saved);
-        booleanQ7Op3 = savedInstanceState.getBoolean(q7Op3_saved);
-        booleanQ8Op1 = savedInstanceState.getBoolean(q8Op1_saved);
-        booleanQ8Op2 = savedInstanceState.getBoolean(q8Op2_saved);
-        booleanQ8Op3 = savedInstanceState.getBoolean(q8Op3_saved);
+        booleanQ1Op1 = savedInstanceState.getBoolean(Q1OP1_SAVED);
+        booleanQ1Op2 = savedInstanceState.getBoolean(Q1OP2_SAVED);
+        booleanQ1Op3 = savedInstanceState.getBoolean(Q1OP3_SAVED);
+        booleanQ2Op1 = savedInstanceState.getBoolean(Q2OP1_SAVED);
+        booleanQ2Op2 = savedInstanceState.getBoolean(Q2OP2_SAVED);
+        booleanQ2Op3 = savedInstanceState.getBoolean(Q2OP3_SAVED);
+        booleanQ4Op1 = savedInstanceState.getBoolean(Q4OP1_SAVED);
+        booleanQ4Op2 = savedInstanceState.getBoolean(Q4OP2_SAVED);
+        booleanQ4Op3 = savedInstanceState.getBoolean(Q4OP3_SAVED);
+        booleanQ5Op1 = savedInstanceState.getBoolean(Q5OP1_SAVED);
+        booleanQ5Op2 = savedInstanceState.getBoolean(Q5OP2_SAVED);
+        booleanQ5Op3 = savedInstanceState.getBoolean(Q5OP3_SAVED);
+        booleanQ7Op1 = savedInstanceState.getBoolean(Q7OP1_SAVED);
+        booleanQ7Op2 = savedInstanceState.getBoolean(Q7OP2_SAVED);
+        booleanQ7Op3 = savedInstanceState.getBoolean(Q7OP3_SAVED);
+        booleanQ8Op1 = savedInstanceState.getBoolean(Q8OP1_SAVED);
+        booleanQ8Op2 = savedInstanceState.getBoolean(Q8OP2_SAVED);
+        booleanQ8Op3 = savedInstanceState.getBoolean(Q8OP3_SAVED);
 
-        Q3Text = savedInstanceState.getString(q3Text_saved);
-        Q9text = savedInstanceState.getString(q9Text_saved);
+        Q3Text = savedInstanceState.getString(Q3TEXT_SAVED);
+        Q9text = savedInstanceState.getString(Q9TEXT_SAVED);
 
-        booleanQ6Op1 = savedInstanceState.getBoolean(Q6chk1_saved);
-        booleanQ6Op2 = savedInstanceState.getBoolean(Q6chk2_saved);
-        booleanQ6Op3 = savedInstanceState.getBoolean(Q6chk3_saved);
-        booleanQ6Op4 = savedInstanceState.getBoolean(Q6chk4_saved);
-        booleanQ6Op5 = savedInstanceState.getBoolean(Q6chk5_saved);
-        booleanQ10Op1 = savedInstanceState.getBoolean(Q10chk1_saved);
-        booleanQ10Op2 = savedInstanceState.getBoolean(Q10chk2_saved);
-        booleanQ10Op3 = savedInstanceState.getBoolean(Q10chk3_saved);
-        booleanQ10Op4 = savedInstanceState.getBoolean(Q10chk4_saved);
-        booleanQ10Op5 = savedInstanceState.getBoolean(Q10chk5_saved);
+        booleanQ6Op1 = savedInstanceState.getBoolean(Q6CHK1_SAVED);
+        booleanQ6Op2 = savedInstanceState.getBoolean(Q6CHK2_SAVED);
+        booleanQ6Op3 = savedInstanceState.getBoolean(Q6CHK3_SAVED);
+        booleanQ6Op4 = savedInstanceState.getBoolean(Q6CHK4_SAVED);
+        booleanQ6Op5 = savedInstanceState.getBoolean(Q6CHK5_SAVED);
+        booleanQ10Op1 = savedInstanceState.getBoolean(Q10CHK1_SAVED);
+        booleanQ10Op2 = savedInstanceState.getBoolean(Q10CHK2_SAVED);
+        booleanQ10Op3 = savedInstanceState.getBoolean(Q10CHK3_SAVED);
+        booleanQ10Op4 = savedInstanceState.getBoolean(Q10CHK4_SAVED);
+        booleanQ10Op5 = savedInstanceState.getBoolean(Q10CHK5_SAVED);
     }
 
 
@@ -228,8 +221,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
 
-
-
+        String s = getIntent().getStringExtra("name");
+        TextView txtPlayer = (TextView) findViewById(R.id.lbl_player);
+        txtPlayer.setText(s);
 
 // the following line prevents the soft keyboard to appear as soon as the app is launched
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -273,7 +267,14 @@ public class MainActivity extends AppCompatActivity {
         radioGroupQ8 = (RadioGroup) findViewById(R.id.radio_group_q8);
 
 
+
+
+
+
     }
+
+
+
 
     private void setupWindowAnimations() {
         Slide slide = new Slide();

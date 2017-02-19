@@ -64,18 +64,27 @@ public class ResultActivity extends AppCompatActivity{
 
 
 
-        Button goToMainMenu = (Button)findViewById(R.id.go_to_quiz);
-        goToMainMenu.setOnClickListener(new View.OnClickListener() {
+        Button goToQuiz = (Button)findViewById(R.id.go_to_quiz);
+        goToQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent quizIntent = new Intent(ResultActivity.this, MainActivity.class);
                 startActivity(quizIntent);
             }
         });
-
+        Button goToMainMenu = (Button)findViewById(R.id.go_to_main_menu);
+        goToMainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(ResultActivity.this, MainMenuActivity.class);
+                startActivity(menuIntent);
+            }
+        });
 
 
     }
+
+
     private void setupWindowAnimations() {
         Slide slide = new Slide();
         slide.setDuration(1000);

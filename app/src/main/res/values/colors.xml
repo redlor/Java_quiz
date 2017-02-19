@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="backgroundColor">#9E9E9E</color>
+    <color name="main_title_color">#E65100</color>
+    <color name="enter_name_color">#0D47A1</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

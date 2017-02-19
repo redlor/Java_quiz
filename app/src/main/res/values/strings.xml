@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Java quiz</string>
+
+    <string name="label_main_title">The Ultimate Java Quiz</string>
+    <string name="label_enter_name">Enter your name:</string>
+    <string name="hint_enter_name">Name</string>
+    <string name="btn_enter_button">Start the quiz</string>
+    <string name="label_current_player">Current player:</string>
+
     <string name="title">Then 10 facts you have to know about Java</string>
     <string name="question_n1_title">Question 1:</string>
     <string name="question_n2_title">Question 2:</string>
@@ -55,8 +62,8 @@
     <string name="correct_answers_title">The correct answers:</string>
     <string name="answer3">1995</string>
     <string name="answer9">public</string>
-    <string name="you_got">You got</string>
-    <string name="out_of">out of</string>
+    <string name="btn_back_to_main_menu">Main Menu</string>
+    <string name="logo_description">Java Logo</string>
 
 
 </resources>

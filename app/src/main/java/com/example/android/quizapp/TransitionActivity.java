@@ -14,6 +14,7 @@ public class TransitionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
         setupWindowAnimations();
+
     }
 
     private void setupWindowAnimations() {
