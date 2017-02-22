@@ -24,6 +24,9 @@ public class ResultActivity extends AppCompatActivity{
         double scoreAnswers = extras.getDouble("score");
         boolean[] correctAnswerArray = extras.getBooleanArray("questionArray");
 
+        final TextView txtPlayerInResult = (TextView) findViewById(R.id.lbl_player_in_result);
+        String pl = getIntent().getExtras().getString("name_player");
+        txtPlayerInResult.setText(pl);
 
         if (scoreAnswers<100){
             String answers=getResources().getString(R.string.correct_answers_title);
@@ -68,10 +71,13 @@ public class ResultActivity extends AppCompatActivity{
         goToQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent quizIntent = new Intent(ResultActivity.this, MainActivity.class);
-                startActivity(quizIntent);
+                Intent returnIntent = new Intent(ResultActivity.this, MainActivity.class);
+                String tx1 = txtPlayerInResult.getText().toString();
+                returnIntent.putExtra("name", tx1);
+                startActivity(returnIntent);
             }
         });
+
         Button goToMainMenu = (Button)findViewById(R.id.go_to_main_menu);
         goToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override

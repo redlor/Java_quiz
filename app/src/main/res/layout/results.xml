@@ -5,9 +5,14 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/lbl_player_in_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,12 +43,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:gravity="center">
 
             <Button
                 android:id="@+id/go_to_quiz"
                 style="@style/button"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:text="@string/reset_quiz" />
 
             <Button
@@ -52,5 +57,5 @@
                 android:text="@string/btn_back_to_main_menu" />
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

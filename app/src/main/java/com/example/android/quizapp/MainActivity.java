@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity  {
     private CheckBox chkQ6Op2, chkQ6Op5, chkQ10Op1, chkQ10Op4;
 
     String answerQ3 = "1995";
-    String answerQ9 = "public";
+    String answerQ9 = "Public";
     String Q3Text, Q9text;
+
 
     private boolean booleanQ1Op1 = false;
     private boolean booleanQ1Op2 = false;
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity  {
     static final String Q10CHK3_SAVED = "Q10chk3";
     static final String Q10CHK4_SAVED = "Q10chk4";
     static final String Q10CHK5_SAVED = "Q10chk5";
+
+
 
 
     @Override
@@ -175,6 +179,7 @@ public class MainActivity extends AppCompatActivity  {
         outState.putBoolean(Q10CHK4_SAVED, chkQ10Op4.isChecked());
         outState.putBoolean(Q10CHK5_SAVED, chkQ10Op5.isChecked());
 
+
     }
 
     @Override
@@ -213,6 +218,7 @@ public class MainActivity extends AppCompatActivity  {
         booleanQ10Op3 = savedInstanceState.getBoolean(Q10CHK3_SAVED);
         booleanQ10Op4 = savedInstanceState.getBoolean(Q10CHK4_SAVED);
         booleanQ10Op5 = savedInstanceState.getBoolean(Q10CHK5_SAVED);
+
     }
 
 
@@ -221,9 +227,15 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
 
-        String s = getIntent().getStringExtra("name");
+
+
         TextView txtPlayer = (TextView) findViewById(R.id.lbl_player);
-        txtPlayer.setText(s);
+        String pl = getIntent().getExtras().getString("name");
+        txtPlayer.setText(pl);
+        System.out.println(pl);
+
+
+
 
 // the following line prevents the soft keyboard to appear as soon as the app is launched
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -266,9 +278,14 @@ public class MainActivity extends AppCompatActivity  {
         radioGroupQ7 = (RadioGroup) findViewById(R.id.radio_group_q7);
         radioGroupQ8 = (RadioGroup) findViewById(R.id.radio_group_q8);
 
-
-
-
+        Button goToMainMenu = (Button)findViewById(R.id.go_to_main_menu);
+        goToMainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(MainActivity.this, MainMenuActivity.class);
+                startActivity(menuIntent);
+            }
+        });
 
 
     }
@@ -411,12 +428,16 @@ public class MainActivity extends AppCompatActivity  {
                         questionArray[9]=false;
                     }
                     resultIntent.putExtra("questionArray", questionArray);
+                    TextView txtPlayer_pass = (TextView) findViewById(R.id.lbl_player);
+                    String txPlayer = txtPlayer_pass.getText().toString();
+                    resultIntent.putExtra("name_player", txPlayer);
                     startActivity(resultIntent);
                   Toast.makeText(this, "Your score is: " + score + "%", Toast.LENGTH_LONG).show();
                     setupWindowAnimations();
                 } else {
                     Toast.makeText(this, "You have not answered all the questions!", Toast.LENGTH_SHORT).show();
                 }
+
             }
 
 
@@ -438,10 +459,11 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void checkBoxesDone() {
-        if (!chkQ6Op1.isChecked() && !chkQ6Op2.isChecked() && !chkQ6Op3.isChecked() && !chkQ6Op4.isChecked() && !chkQ6Op5.isChecked() && !chkQ10Op1.isChecked() && !chkQ10Op2.isChecked() && !chkQ10Op3.isChecked() && !chkQ10Op4.isChecked() && !chkQ10Op5.isChecked()) {
+        if (!chkQ6Op1.isChecked() && !chkQ6Op2.isChecked() && !chkQ6Op3.isChecked() && !chkQ6Op4.isChecked() && !chkQ6Op5.isChecked() || !chkQ10Op1.isChecked() && !chkQ10Op2.isChecked() && !chkQ10Op3.isChecked() && !chkQ10Op4.isChecked() && !chkQ10Op5.isChecked()) {
             allDone = false;
         }
     }
+
 
  /*   // reset all the fields (not neede anymore since moving to ResultActivity
     public void reset(View view) {

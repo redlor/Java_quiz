@@ -11,6 +11,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/go_to_main_menu"
+            style="@style/button"
+            android:text="@string/btn_back_to_main_menu" />
+
+        <TextView
+            android:id="@+id/lbl_player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
         <android.support.v7.widget.CardView
             android:id="@+id/cv1"
             style="@style/card"
