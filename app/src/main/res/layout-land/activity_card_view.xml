@@ -211,6 +211,7 @@
 
                         <EditText
                             android:id="@+id/text_question3"
+                            android:inputType="number"
                             style="@style/edit_text" />
                     </LinearLayout>
                 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.android.quizapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity  {
     String answerQ3 = "1995";
     String answerQ9 = "Public";
     String Q3Text, Q9text;
-
 
     private boolean booleanQ1Op1 = false;
     private boolean booleanQ1Op2 = false;
@@ -234,7 +234,10 @@ public class MainActivity extends AppCompatActivity  {
         txtPlayer.setText(pl);
         System.out.println(pl);
 
-
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                final TextView btn2 = (TextView) findViewById(R.id.lbl_player);
+                btn2.setVisibility(View.GONE);
+        }
 
 
 // the following line prevents the soft keyboard to appear as soon as the app is launched
@@ -324,7 +327,7 @@ public class MainActivity extends AppCompatActivity  {
                     Intent resultIntent = new Intent(MainActivity.this, ResultActivity.class);
 
                     if (radioQ1Op2.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[0] =true;
                     }
                     else {
@@ -332,14 +335,14 @@ public class MainActivity extends AppCompatActivity  {
                     }
 
                     if (radioQ2Op2.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[1] =true;
                     }
                     else {
                         questionArray[1]=false;
                     }
                     if (textQ3.getText().toString().equals(answerQ3)) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[2] =true;
                     }
                     else {
@@ -347,81 +350,49 @@ public class MainActivity extends AppCompatActivity  {
                     }
 
                     if (radioQ4Op3.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[3] =true;
                     }
                     else {
                         questionArray[3]=false;
                     }
                     if (radioQ5Op3.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[4] =true;
                     }
                     else {
                         questionArray[4]=false;
                     }
-                    if (chkQ6Op1.isChecked() & chkQ6Op3.isChecked() & chkQ6Op4.isChecked()) {
-                        score = score + 10;
-                        questionArray[5] =true;
-                    }
-                    if (chkQ6Op1.isChecked() & chkQ6Op3.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[5] =true;
-                    }
-                    if (chkQ6Op1.isChecked() & chkQ6Op4.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[5] =true;
-                    }
-                    if (chkQ6Op3.isChecked() & chkQ6Op4.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[5] =true;
-                    }
-                    if (chkQ6Op1.isChecked() | chkQ6Op4.isChecked() | chkQ6Op3.isChecked()) {
-                        score = score + 3.33;
+                    if (chkQ6Op1.isChecked() && chkQ6Op3.isChecked() && chkQ6Op4.isChecked() && !chkQ6Op2.isChecked() && !chkQ6Op5.isChecked()) {
+                        score+= 10;
                         questionArray[5] =true;
                     }
                     else {
                         questionArray[5]=false;
                     }
                     if (radioQ7Op1.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[6] =true;
                     }
                     else {
                         questionArray[6]=false;
                     }
                     if (radioQ8Op3.isChecked()) {
-                        score = score + 10;
+                        score+= 10;
                         questionArray[7] =true;
                     }
                     else {
                         questionArray[7]=false;
                     }
-                    if (textQ9.getText().toString().equals(answerQ9)) {
-                        score = score + 10;
+                    if (textQ9.getText().toString().equalsIgnoreCase(answerQ9)) {
+                        score+= 10;
                         questionArray[8] =true;
                     }
                     else {
                         questionArray[8]=false;
                     }
-                    if (chkQ10Op2.isChecked() & chkQ10Op3.isChecked() & chkQ10Op5.isChecked()) {
-                        score = score + 10;
-                        questionArray[9] =true;
-                    }
-                    if (chkQ10Op2.isChecked() & chkQ6Op3.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[9] =true;
-                    }
-                    if (chkQ10Op2.isChecked() & chkQ10Op5.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[9] =true;
-                    }
-                    if (chkQ10Op3.isChecked() & chkQ10Op5.isChecked()) {
-                        score = score + 6.67;
-                        questionArray[9] =true;
-                    }
-                    if (chkQ10Op2.isChecked() | chkQ10Op3.isChecked() | chkQ10Op5.isChecked()) {
-                        score = score + 3.33;
+                    if (chkQ10Op2.isChecked() && chkQ10Op3.isChecked() && chkQ10Op5.isChecked() && !chkQ10Op1.isChecked() && !chkQ10Op4.isChecked()) {
+                        score+= 10;
                         questionArray[9] =true;
                     }
                     else {
@@ -437,7 +408,7 @@ public class MainActivity extends AppCompatActivity  {
                 } else {
                     Toast.makeText(this, "You have not answered all the questions!", Toast.LENGTH_SHORT).show();
                 }
-
+                score = 0;
             }
 
 
@@ -463,55 +434,5 @@ public class MainActivity extends AppCompatActivity  {
             allDone = false;
         }
     }
-
-
- /*   // reset all the fields (not neede anymore since moving to ResultActivity
-    public void reset(View view) {
-
-
-        score = 0;
-
-        radioGroupQ1.clearCheck();
-        radioGroupQ2.clearCheck();
-        radioGroupQ4.clearCheck();
-        radioGroupQ5.clearCheck();
-        radioGroupQ7.clearCheck();
-        radioGroupQ8.clearCheck();
-
-        if (chkQ6Op1.isChecked()) {
-            chkQ6Op1.toggle();
-        }
-        if (chkQ6Op2.isChecked()) {
-            chkQ6Op2.toggle();
-        }
-        if (chkQ6Op3.isChecked()) {
-            chkQ6Op3.toggle();
-        }
-        if (chkQ6Op4.isChecked()) {
-            chkQ6Op4.toggle();
-        }
-        if (chkQ6Op5.isChecked()) {
-            chkQ6Op5.toggle();
-        }
-        if (chkQ10Op1.isChecked()) {
-            chkQ10Op1.toggle();
-        }
-        if (chkQ10Op2.isChecked()) {
-            chkQ10Op2.toggle();
-        }
-        if (chkQ10Op3.isChecked()) {
-            chkQ10Op3.toggle();
-        }
-        if (chkQ10Op4.isChecked()) {
-            chkQ10Op4.toggle();
-        }
-        if (chkQ10Op5.isChecked()) {
-            chkQ10Op5.toggle();
-        }
-
-        textQ3.setText(null);
-        textQ9.setText(null);
-
-    }*/
 
 }

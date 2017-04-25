@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Java quiz</string>
+
+    <string name="label_main_title">Java Quiz</string>
+    <string name="label_enter_name">Inserisci il tuo nome:</string>
+    <string name="hint_enter_name">Nome</string>
+    <string name="btn_enter_button">Comincia il quiz</string>
+    <string name="label_current_player">Giocatore attuale:</string>
+
+    <string name="title">Le dieci cose che devi sapere su Java</string>
+    <string name="question_n1_title">Domanda 1:</string>
+    <string name="question_n2_title">Domanda 2:</string>
+    <string name="question_n3_title">Domanda 3:</string>
+    <string name="question_n4_title">Domanda 4:</string>
+    <string name="question_n5_title">Domanda 5:</string>
+    <string name="question_n6_title">Domanda 6:</string>
+    <string name="question_n7_title">Domanda 7:</string>
+    <string name="question_n8_title">Domanda 8:</string>
+    <string name="question_n9_title">Domanda 9:</string>
+    <string name="question_n10_title">Domanda 10:</string>
+    <string name="question_n1">Qual era il nome originario del linguaggio Java ?</string>
+    <string name="question_n2">Chi è stato il creatore di Java?</string>
+    <string name="question_n3">In quale anno Java è stato ufficialmente annunciato?</string>
+    <string name="question_n4">Quale azienda ha sviluppato il linguaggio in origine?</string>
+    <string name="question_n5">Da quale altro linguaggio di programmazione è influenzata la sintassi di Java?</string>
+    <string name="question_n6">Quali sono alcuni dei principi di Java (seleziona le risposte corrette)?</string>
+    <string name="question_n7">Quale sintassi useresti per commentare una singola linea di codice?</string>
+    <string name="question_n8">Qual è il nome dell\'applicazione java che può essere eseguita in un browser web?</string>
+    <string name="question_n9">Quale parola chiave indica che un metodo può essere richiamato in un\'altra classe?</string>
+    <string name="question_n10">Quali sono le tre nozioni di Java Virtual Machine (JVM)?</string>
+    <string name="question_n1_radio_button_1">Maple</string>
+    <string name="question_n1_radio_button_2">Oak</string>
+    <string name="question_n1_radio_button_3">Birch</string>
+    <string name="question_n2_radio_button_1">Bill Gates</string>
+    <string name="question_n2_radio_button_2">James Gosling</string>
+    <string name="question_n2_radio_button_3">Steve Jobs</string>
+    <string name="question_n4_radio_button_1">Oracle</string>
+    <string name="question_n4_radio_button_2">Netscape</string>
+    <string name="question_n4_radio_button_3">Sun Microsystems</string>
+    <string name="question_n5_radio_button_1">Pascal</string>
+    <string name="question_n5_radio_button_2">Visual Basic</string>
+    <string name="question_n5_radio_button_3">C++</string>
+    <string name="question_n6_checkbox_1">Semplice, orientato agli oggetti e familiare</string>
+    <string name="question_n6_checkbox_2">Affidabile e a basso costo</string>
+    <string name="question_n6_checkbox_3">Senza archictettura e portatile</string>
+    <string name="question_n6_checkbox_4">Robusto e sicuro</string>
+    <string name="question_n6_checkbox_5">Rigido e statico</string>
+    <string name="question_n7_radio_button_1">//</string>
+    <string name="question_n7_radio_button_2">/*</string>
+    <string name="question_n7_radio_button_3">**/</string>
+    <string name="question_n8_radio_button_1">Java power functions</string>
+    <string name="question_n8_radio_button_2">Java Servlet</string>
+    <string name="question_n8_radio_button_3">Java Applet</string>
+    <string name="question_n10_checkbox_1">Versione</string>
+    <string name="question_n10_checkbox_2">Implementazione</string>
+    <string name="question_n10_checkbox_3">Istanza</string>
+    <string name="question_n10_checkbox_4">Processo</string>
+    <string name="question_n10_checkbox_5">Specificazione</string>
+    <string name="submit_button">Risultato</string>
+    <string name="reset_quiz">Ritenta</string>
+
+    <string name="correct_answers_title">Le risposte esatte:</string>
+    <string name="answer3">1995</string>
+    <string name="answer9">public</string>
+    <string name="btn_back_to_main_menu">Menu Principale</string>
+    <string name="logo_description">Java Logo</string>
+
+
+</resources>
